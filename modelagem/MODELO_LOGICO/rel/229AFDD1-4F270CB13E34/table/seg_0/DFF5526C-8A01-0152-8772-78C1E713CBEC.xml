@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DFF5526C-8A01-0152-8772-78C1E713CBEC" name="STATUS">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:38:05 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="AAA40DB7-AF4B-DEFF-2D9C-E72DCFAA0215">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:38:25 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO" id="DBC944EF-B51F-05F9-BB0F-091FA94EEC8B">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:40:51 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="93E478CA-EEAE-FAB3-A804-F7E434500713" name="STATUS_PK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:38:25 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AAA40DB7-AF4B-DEFF-2D9C-E72DCFAA0215"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

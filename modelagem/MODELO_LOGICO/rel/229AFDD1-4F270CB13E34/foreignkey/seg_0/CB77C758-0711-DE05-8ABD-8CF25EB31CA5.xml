@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CB77C758-0711-DE05-8ABD-8CF25EB31CA5" containerWithKeyObject="4E3E0A7D-F047-4C0C-3B6E-64424E4F6C94" localFKIndex="A2D38C80-5498-3974-38DA-4648C1D8080E" name="CAIXA_STATUS_FK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:48:33 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<referredTableLongName>STATUS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DFF5526C-8A01-0152-8772-78C1E713CBEC</referredTableID>
+<keyObject>93E478CA-EEAE-FAB3-A804-F7E434500713</keyObject>
+<referredKeyID>93E478CA-EEAE-FAB3-A804-F7E434500713</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

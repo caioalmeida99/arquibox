@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B08E8EC7-016C-CC9D-DFF9-902BF4BF9708" name="ACESSO_CAIXA">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:58:10 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<ordsAlias>table_8</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="9BD51BB6-9C91-A128-A6A4-3D7F11FCB207">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:58:55 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DT_ACESSO" id="FB8EAA7B-929F-7B3F-A87F-C4EDAF4067F5">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:59:25 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FUNCIONARIO_MATRICULA" id="C6B560C5-8329-23DB-CBB0-5B593B1DAC16">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:59:39 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F2744B6-E1DC-A10F-FF17-BD83ABCBD344" referredColumn="4202DD60-E9ED-FD35-2FF8-F36C5939FB99"/>
+</associations>
+</Column>
+<Column name="CAIXA_ID" id="9EEEC57C-084F-6D19-FCD6-EA26D0BEBC33">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 13:00:41 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95FFB951-3B20-E35C-4171-46778E6CA4FC" referredColumn="C0625FF3-26A4-2C70-2669-5CCECDEF718B"/>
+</associations>
+</Column>
+<Column name="STATUS" id="39FDFCC5-2FA4-F8F3-30F9-90EE4B8D4EDE">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-08-04 16:29:24 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>50 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC694290-E425-1896-944D-296481E5EF72" name="ACESSO_CAIXA_PK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:58:55 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BD51BB6-9C91-A128-A6A4-3D7F11FCB207"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E785DB3A-A7CF-177D-6C44-6E3C51FA28FA" name="ACESSO_CAIXA_FUNC_FK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:59:39 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C6B560C5-8329-23DB-CBB0-5B593B1DAC16"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FFAF4ABC-5BE0-5D69-9050-B69638D3E8ED" name="ACESSO_CAIXA_CAIXA_FK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 13:00:41 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9EEEC57C-084F-6D19-FCD6-EA26D0BEBC33"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

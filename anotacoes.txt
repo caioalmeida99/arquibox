@@ -1,0 +1,459 @@
+-- Gerado por Oracle SQL Developer Data Modeler 24.3.1.351.0831
+--   em:        2025-07-19 10:03:55 BRT
+--   site:      Oracle Database 21c
+--   tipo:      Oracle Database 21c
+
+
+
+-- predefined type, no DDL - MDSYS.SDO_GEOMETRY
+
+-- predefined type, no DDL - XMLTYPE
+
+CREATE TABLE PESSOA 
+    ( 
+     ID   NUMBER (99999)  NOT NULL , 
+     NOME VARCHAR2 (250 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE PESSOA 
+    ADD CONSTRAINT PESSOA_PK PRIMARY KEY ( ID ) ;
+
+CREATE TABLE DEPARTAMENTO 
+    ( 
+     ID   NUMBER (99999)  NOT NULL , 
+     NOME VARCHAR2 (200 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE DEPARTAMENTO 
+    ADD CONSTRAINT DEPARTAMENTO_PK PRIMARY KEY ( ID ) ;
+	
+CREATE TABLE DOCUMENTO 
+    ( 
+     ID       NUMBER (99999)  NOT NULL , 
+     TP_DOC   VARCHAR2 (200 CHAR)  NOT NULL , 
+     TEMP_ARQ NUMBER (99999)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE DOCUMENTO 
+    ADD CONSTRAINT DOCUMENTO_PK PRIMARY KEY ( ID ) ;
+
+CREATE TABLE ACESSO_CAIXA 
+    ( 
+     ID                    NUMBER (99999)  NOT NULL , 
+     DT_ACESSO             DATE  NOT NULL , 
+     FUNCIONARIO_MATRICULA NUMBER (99999)  NOT NULL , 
+     CAIXA_ID              NUMBER (99999)  NOT NULL 
+    ) 
+;
+
+CREATE TABLE STATUS 
+    ( 
+     ID   NUMBER (99999)  NOT NULL , 
+     TIPO VARCHAR2 (200 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE STATUS 
+    ADD CONSTRAINT STATUS_PK PRIMARY KEY ( ID ) ;
+	
+CREATE TABLE LOCALIZACAO 
+    ( 
+     ID         NUMBER (99999)  NOT NULL , 
+     SALA       VARCHAR2 (100 CHAR)  NOT NULL , 
+     PRATELEIRA VARCHAR2 (100 CHAR)  NOT NULL , 
+     COLUNA     VARCHAR2 (10 CHAR)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE LOCALIZACAO 
+    ADD CONSTRAINT LOCALIZACAO_PK PRIMARY KEY ( ID ) ;
+	
+CREATE TABLE FUNCIONARIO 
+    ( 
+     MATRICULA       NUMBER (99999)  NOT NULL , 
+     CARGO           VARCHAR2 (200 CHAR)  NOT NULL , 
+     PESSOA_ID       NUMBER (99999)  NOT NULL , 
+     DEPARTAMENTO_ID NUMBER (99999)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE FUNCIONARIO 
+    ADD CONSTRAINT FUNCIONARIO_PK PRIMARY KEY ( MATRICULA ) ;	
+
+CREATE TABLE CAIXA 
+    ( 
+     ID              NUMBER (99999)  NOT NULL , 
+     PERIODO         VARCHAR2 (200 CHAR)  NOT NULL , 
+     DT_PREVISAO     DATE  NOT NULL , 
+     DT_ARQUIVAMENTO DATE  NOT NULL , 
+     DOCUMENTO_ID    NUMBER (99999)  NOT NULL , 
+     STATUS_ID       NUMBER (99999)  NOT NULL , 
+     LOCALIZACAO_ID  NUMBER (99999)  NOT NULL 
+    ) 
+;
+
+ALTER TABLE CAIXA 
+    ADD CONSTRAINT CAIXA_PK PRIMARY KEY ( ID ) ;	
+
+ALTER TABLE ACESSO_CAIXA 
+    ADD CONSTRAINT ACESSO_CAIXA_CAIXA_FK FOREIGN KEY 
+    ( 
+     CAIXA_ID
+    ) 
+    REFERENCES CAIXA 
+    ( 
+     ID
+    ) 
+;
+ALTER TABLE ACESSO_CAIXA 
+    ADD CONSTRAINT ACESSO_CAIXA_PK PRIMARY KEY ( ID ) ;
+	
+ALTER TABLE ACESSO_CAIXA 
+    ADD CONSTRAINT ACESSO_CAIXA_FUNC_FK FOREIGN KEY 
+    ( 
+     FUNCIONARIO_MATRICULA
+    ) 
+    REFERENCES FUNCIONARIO 
+    ( 
+     MATRICULA
+    ) 
+;
+
+ALTER TABLE CAIXA 
+    ADD CONSTRAINT CAIXA_DOCUMENTO_FK FOREIGN KEY 
+    ( 
+     DOCUMENTO_ID
+    ) 
+    REFERENCES DOCUMENTO 
+    ( 
+     ID
+    ) 
+;
+
+ALTER TABLE CAIXA 
+    ADD CONSTRAINT CAIXA_LOCALIZACAO_FK FOREIGN KEY 
+    ( 
+     LOCALIZACAO_ID
+    ) 
+    REFERENCES LOCALIZACAO 
+    ( 
+     ID
+    ) 
+;
+
+ALTER TABLE CAIXA 
+    ADD CONSTRAINT CAIXA_STATUS_FK FOREIGN KEY 
+    ( 
+     STATUS_ID
+    ) 
+    REFERENCES STATUS 
+    ( 
+     ID
+    ) 
+;
+
+ALTER TABLE FUNCIONARIO 
+    ADD CONSTRAINT FUNC_DEP_FK FOREIGN KEY 
+    ( 
+     DEPARTAMENTO_ID
+    ) 
+    REFERENCES DEPARTAMENTO 
+    ( 
+     ID
+    ) 
+;
+
+ALTER TABLE FUNCIONARIO 
+    ADD CONSTRAINT FUNC_PESSOA_FK FOREIGN KEY 
+    ( 
+     PESSOA_ID
+    ) 
+    REFERENCES PESSOA 
+    ( 
+     ID
+    ) 
+;
+
+CREATE SEQUENCE ACESSO_CAIXA_ID_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER ACESSO_CAIXA_ID_TRG 
+BEFORE INSERT ON ACESSO_CAIXA 
+FOR EACH ROW 
+WHEN (NEW.ID IS NULL) 
+BEGIN 
+    :NEW.ID := ACESSO_CAIXA_ID_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE CAIXA_ID_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER CAIXA_ID_TRG 
+BEFORE INSERT ON CAIXA 
+FOR EACH ROW 
+WHEN (NEW.ID IS NULL) 
+BEGIN 
+    :NEW.ID := CAIXA_ID_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE DEPARTAMENTO_ID_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER DEPARTAMENTO_ID_TRG 
+BEFORE INSERT ON DEPARTAMENTO 
+FOR EACH ROW 
+WHEN (NEW.ID IS NULL) 
+BEGIN 
+    :NEW.ID := DEPARTAMENTO_ID_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE DOCUMENTO_ID_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER DOCUMENTO_ID_TRG 
+BEFORE INSERT ON DOCUMENTO 
+FOR EACH ROW 
+WHEN (NEW.ID IS NULL) 
+BEGIN 
+    :NEW.ID := DOCUMENTO_ID_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE FUNCIONARIO_MATRICULA_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER FUNCIONARIO_MATRICULA_TRG 
+BEFORE INSERT ON FUNCIONARIO 
+FOR EACH ROW 
+WHEN (NEW.MATRICULA IS NULL) 
+BEGIN 
+    :NEW.MATRICULA := FUNCIONARIO_MATRICULA_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE LOCALIZACAO_ID_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER LOCALIZACAO_ID_TRG 
+BEFORE INSERT ON LOCALIZACAO 
+FOR EACH ROW 
+WHEN (NEW.ID IS NULL) 
+BEGIN 
+    :NEW.ID := LOCALIZACAO_ID_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE PESSOA_ID_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER PESSOA_ID_TRG 
+BEFORE INSERT ON PESSOA 
+FOR EACH ROW 
+WHEN (NEW.ID IS NULL) 
+BEGIN 
+    :NEW.ID := PESSOA_ID_SEQ.NEXTVAL; 
+END;
+/
+
+CREATE SEQUENCE STATUS_ID_SEQ 
+START WITH 1 
+    NOCACHE 
+    ORDER ;
+
+CREATE OR REPLACE TRIGGER STATUS_ID_TRG 
+BEFORE INSERT ON STATUS 
+FOR EACH ROW 
+WHEN (NEW.ID IS NULL) 
+BEGIN 
+    :NEW.ID := STATUS_ID_SEQ.NEXTVAL; 
+END;
+/
+
+
+
+-- Relatório do Resumo do Oracle SQL Developer Data Modeler: 
+-- 
+-- CREATE TABLE                             8
+-- CREATE INDEX                             0
+-- ALTER TABLE                             15
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           8
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          8
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0
+
+
+-- Correções
+
+
+ALTER TABLE CAIXA
+ADD (
+    PERIODO_INC DATE,
+    PERIODO_FIM DATE
+);
+
+
+
+SELECT * FROM CAIXA;
+
+ALTER TABLE caixa DROP COLUMN periodo;
+
+SELECT trigger_name, status
+FROM user_triggers
+WHERE table_name = 'CAIXA';
+
+DESC CAIXA;
+
+
+INSERT INTO documento (id, tp_doc, temp_arq)
+VALUES (1, 'FOLHA PONTO', 30);
+
+INSERT INTO status (id, tipo)
+VALUES (1, 'Arquivado');
+
+INSERT INTO LOCALIZACAO (id, sala, prateleira, coluna)
+VALUES (1, 'Sala A', 'Prateleira 3', 'C1');
+
+
+SELECT sequence_name 
+FROM user_sequences;
+
+SELECT trigger_name, triggering_event, trigger_body 
+FROM user_triggers 
+WHERE table_name = 'CAIXA';
+
+SELECT * FROM V$SESSION;
+
+SELECT CAIXA_ID_SEQ.NEXTVAL FROM dual;
+
+INSERT INTO ARQUIBOX.caixa 
+(dt_previsao, dt_arquivamento, documento_id, status_id, localizacao_id, periodo_inc, periodo_fim)
+VALUES 
+(
+ TO_DATE('22/07/2025', 'DD/MM/YYYY'), 
+ TO_DATE('23/07/2025', 'DD/MM/YYYY'), 
+ 1, 1, 1, 
+ TO_DATE('01/01/2025', 'DD/MM/YYYY'), 
+ TO_DATE('01/02/2025', 'DD/MM/YYYY')
+);
+
+commit
+
+select * from gv$session where username like 'ARQUIBOX';
+
+SELECT
+    l1.session_id AS blocking_session,
+    s1.serial# AS blocking_serial,
+    s1.username AS blocking_user,
+    l2.session_id AS waiting_session,
+    s2.serial# AS waiting_serial,
+    s2.username AS waiting_user,
+    o.owner,
+    o.object_name,
+    o.object_type,
+    l1.locked_mode
+FROM
+    v$locked_object l1
+JOIN
+    v$session s1 ON l1.session_id = s1.sid
+JOIN
+    v$locked_object l2 ON l1.object_id = l2.object_id
+JOIN
+    v$session s2 ON l2.session_id = s2.sid
+JOIN
+    all_objects o ON l1.object_id = o.object_id
+WHERE
+    l1.session_id != l2.session_id
+ORDER BY
+    l1.session_id, l2.session_id;
+    
+    
+SELECT sid, serial#, username, status, osuser, machine, program, sql_id, event
+FROM v$session
+WHERE sid IN (19, 193);
+
+ALTER SYSTEM KILL SESSION '19,60543' IMMEDIATE;
+
+
+SELECT id FROM ARQUIBOX.DOCUMENTO;
+SELECT * FROM arquibox.DOCUMENTO;
+
+DESC arquibox.DOCUMENTO
+
+INSERT INTO ARQUIBOX.DOCUMENTO (ID, TP_DOC, TEMP_ARQ)
+VALUES (1, 'REC', 0);
+
+commit
+
+
+CREATE USER arquibox IDENTIFIED BY "oracle";
+GRANT ALL PRIVILEGES TO arquibox;
+GRANT SYSDBA TO arquibox;
+GRANT CREATE SESSION TO arquibox;
+
+
+
+--
+Acesso caixa
+
+Criar um atributo na entidade acesso caixa
+
+ALTER TABLE ACESSO_CAIXA
+ADD (
+    STATUS VARCHAR2(50,CHAR) NOT NULL
+);
+
+Models acesso caixa
+status: Mapped[str] = mapped_column(VARCHAR(50), nullable=False)

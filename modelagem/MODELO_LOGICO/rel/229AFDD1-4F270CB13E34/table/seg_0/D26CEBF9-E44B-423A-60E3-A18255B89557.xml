@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D26CEBF9-E44B-423A-60E3-A18255B89557" name="FUNCIONARIO">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:54:23 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<ordsAlias>table_7</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MATRICULA" id="4202DD60-E9ED-FD35-2FF8-F36C5939FB99">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:54:53 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARGO" id="C1CCF333-80CC-DBFA-470B-79AB23A300DA">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:55:19 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PESSOA_ID" id="9AE8C20F-F632-C40F-DE55-B524714CA96E">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:57:08 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPARTAMENTO_ID" id="8E3C26F6-1C21-284A-AC13-D77BF3FB8EB6">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:57:29 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70A2E6D7-8B98-22DD-5EE6-E44ACDB1CEB6" referredColumn="440868C1-BC6D-883E-9071-258E85675067"/>
+</associations>
+</Column>
+<Column name="NOME" id="B0855178-C267-B313-2D66-693E5DEE027B">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-30 19:50:06 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150 CHAR</dataTypeSize>
+<ownDataTypeParameters>150 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EMAIL" id="AC40D616-E036-60DE-CF10-87DCFB43E87D">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-30 19:50:20 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>250 CHAR</dataTypeSize>
+<ownDataTypeParameters>250 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="500075A5-E10A-FFC4-5A25-CFCD970614B8" name="FUNCIONARIO_PK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:54:53 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4202DD60-E9ED-FD35-2FF8-F36C5939FB99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A5FBABA3-2C77-02C0-92E2-969A42B1E4B6" name="FUNC_DEP_FK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:57:29 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8E3C26F6-1C21-284A-AC13-D77BF3FB8EB6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

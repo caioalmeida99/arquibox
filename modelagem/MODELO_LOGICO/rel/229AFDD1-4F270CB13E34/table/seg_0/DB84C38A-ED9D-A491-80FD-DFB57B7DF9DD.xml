@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DB84C38A-ED9D-A491-80FD-DFB57B7DF9DD" name="LOCALIZACAO">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:42:12 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<ordsAlias>table_4</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="7E5E595C-1E53-7D1D-56C3-EBA67B73661F">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:42:35 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SALA" id="E6B867D8-967C-3A82-678A-97DE03568F2D">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:45:05 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRATELEIRA" id="F55B1118-BF4B-30B5-B5D9-513097127F9D">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:46:02 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COLUNA" id="B48DCC31-981F-BC15-7E47-85FBC94F02C9">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:47:03 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C53CCDB9-1C41-0FF1-25F5-FB5A662F6481" name="LOCALIZACAO_PK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:42:35 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7E5E595C-1E53-7D1D-56C3-EBA67B73661F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

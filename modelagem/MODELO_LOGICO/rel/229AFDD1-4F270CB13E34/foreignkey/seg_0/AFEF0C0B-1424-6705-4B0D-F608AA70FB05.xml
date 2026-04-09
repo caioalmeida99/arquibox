@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AFEF0C0B-1424-6705-4B0D-F608AA70FB05" containerWithKeyObject="4E3E0A7D-F047-4C0C-3B6E-64424E4F6C94" localFKIndex="95469AB8-D0A4-E87F-F36C-03BCDB1C63D4" name="CAIXA_DOCUMENTO_FK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:47:42 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<referredTableLongName>DOCUMENTO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DFA5987E-34E8-9458-96FA-BB070B3DF45B</referredTableID>
+<keyObject>F3DD6187-36F7-DD9E-507D-CF88DBA6A0F4</keyObject>
+<referredKeyID>F3DD6187-36F7-DD9E-507D-CF88DBA6A0F4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

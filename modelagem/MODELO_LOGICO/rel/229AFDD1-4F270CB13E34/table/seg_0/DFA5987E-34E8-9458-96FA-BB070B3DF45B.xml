@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DFA5987E-34E8-9458-96FA-BB070B3DF45B" name="DOCUMENTO">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:32:28 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="2349C811-1FA0-2C2C-CE90-1B85BB4442D8">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:34:39 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TP_DOC" id="238CBB5E-0488-F8FC-7337-9E5B1643A054">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:34:39 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEMP_ARQ" id="2A20C519-72E3-ABB9-0D34-4F4FBA0610EB">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:37:44 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F3DD6187-36F7-DD9E-507D-CF88DBA6A0F4" name="DOCUMENTO_PK">
+<createdBy>Kaiky</createdBy>
+<createdTime>2025-07-19 12:34:39 UTC</createdTime>
+<ownerDesignName>MODELO_LOGICO</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2349C811-1FA0-2C2C-CE90-1B85BB4442D8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
